@@ -17,4 +17,12 @@ $smt->bindParam(2, $fpassword);
 $smt->execute();
 $numUser=$smt->rowCount();
 echo $numUser;
+// caso de éxito
+if($numUser==1){
+    // hecemos una redireccion a home.php
+    header("location:../view/home.php");
+}else{
+    // fallo en la autentificacion
+    header("location:../view/vista_login.html");
+}
 ?>
